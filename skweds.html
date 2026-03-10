@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Wedding Invitation</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
+
+<style>
+
+body{
+margin:0;
+height:100vh;
+background:url("images.jpeg");
+background-size:cover;
+background-position:center;
+display:flex;
+align-items:center;
+justify-content:center;
+font-family:'Playfair Display',serif;
+color:white;
+overflow:hidden;
+}
+
+/* Dark luxury overlay */
+
+body::before{
+content:"";
+position:absolute;
+width:100%;
+height:100%;
+background:linear-gradient(to bottom,rgba(0,0,0,0.5),rgba(0,0,0,0.8));
+}
+
+/* Golden glow effect */
+
+body::after{
+content:"";
+position:absolute;
+width:400px;
+height:400px;
+background:radial-gradient(circle,#ffd70033,transparent);
+animation:glow 6s infinite alternate;
+}
+
+@keyframes glow{
+from{transform:translate(-100px,-100px);}
+to{transform:translate(200px,200px);}
+}
+
+.container{
+position:relative;
+z-index:2;
+text-align:center;
+}
+
+/* Luxury glass card */
+
+.card{
+
+background:rgba(255,255,255,0.08);
+backdrop-filter:blur(15px);
+padding:70px 80px;
+border-radius:25px;
+box-shadow:0 0 50px rgba(0,0,0,0.9);
+animation:fadeIn 1.5s;
+}
+
+/* Names */
+
+.names{
+font-family:'Great Vibes',cursive;
+font-size:65px;
+letter-spacing:2px;
+}
+
+/* Weds text */
+
+.weds{
+font-size:24px;
+letter-spacing:6px;
+margin:10px 0;
+opacity:0.9;
+}
+
+/* Tap text */
+
+.tap{
+margin-top:30px;
+font-size:15px;
+opacity:0.8;
+}
+
+/* Menu */
+
+.menu{
+display:none;
+}
+
+.menu h2{
+margin-bottom:25px;
+font-weight:400;
+}
+
+/* Luxury gold buttons */
+
+button{
+
+display:block;
+margin:20px auto;
+padding:18px 45px;
+width:280px;
+font-size:18px;
+border:none;
+border-radius:40px;
+cursor:pointer;
+background:linear-gradient(45deg,#FFD700,#FFA500);
+color:black;
+font-weight:bold;
+box-shadow:0 5px 20px rgba(0,0,0,0.6);
+transition:0.35s;
+}
+
+button:hover{
+
+transform:scale(1.08);
+box-shadow:0 0 20px gold;
+
+}
+
+.date{
+
+display:block;
+font-size:14px;
+margin-top:4px;
+
+}
+
+/* Animations */
+
+@keyframes fadeIn{
+
+from{
+opacity:0;
+transform:scale(0.8);
+}
+
+to{
+opacity:1;
+transform:scale(1);
+}
+
+}
+
+.fadeOut{
+animation:fadeOut 0.8s forwards;
+}
+
+@keyframes fadeOut{
+
+to{
+opacity:0;
+transform:scale(1.5);
+}
+
+}
+
+</style>
+
+</head>
+
+<body onclick="nextScreen()">
+
+<div class="container">
+
+<div class="card" id="intro">
+
+<div class="names">Suraksha K</div>
+
+<div class="weds">WEDS</div>
+
+<div class="names">Abhinand David</div>
+
+<div class="tap">Tap anywhere to continue</div>
+
+</div>
+
+<div class="card menu" id="menu">
+
+<h2>Select Event Location</h2>
+
+<button onclick="wedding()">
+Marriage (Church)
+<span class="date">20 / 05 / 2026</span>
+</button>
+
+<button onclick="reception()">
+Reception Venue
+<span class="date">19 / 05 / 2026</span>
+</button>
+
+<button onclick="engagement()">
+Engagement Venue
+<span class="date">19 / 05 / 2026</span>
+</button>
+
+</div>
+
+</div>
+
+<script>
+
+function nextScreen(){
+
+let intro=document.getElementById("intro");
+
+intro.classList.add("fadeOut");
+
+setTimeout(function(){
+
+intro.style.display="none";
+document.getElementById("menu").style.display="block";
+
+},700);
+
+}
+
+function wedding(){
+
+window.location.href="https://maps.app.goo.gl/n5vAKdrRzEKK5R9HA";
+
+}
+
+function reception(){
+
+window.location.href="https://maps.app.goo.gl/EsuESrdiXQEbpE3b6";
+
+}
+
+function engagement(){
+
+window.location.href="https://maps.app.goo.gl/EsuESrdiXQEbpE3b6";
+
+}
+
+</script>
+
+</body>
+
+</html>
